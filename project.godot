@@ -21,10 +21,8 @@ boot_splash/use_filter=false
 window/size/viewport_width=768
 window/size/viewport_height=432
 window/size/mode=3
-window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_height"
 
 [editor]
 
