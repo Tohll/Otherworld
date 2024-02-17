@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbnw6qu8rj2rm"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_3mnnk"]
+[ext_resource type="Texture2D" uid="uid://xm6svq7phsgw" path="res://arts/spritesheets/player/Warrior_spritesheet_allanim.png" id="1_8f7qk"]
+
+[sub_resource type="Animation" id="Animation_4teaj"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_pehtk"]
+resource_name = "player_walk"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [60, 63]
+}
+
+[sub_resource type="Animation" id="Animation_8qppx"]
+resource_name = "player_run_down"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [72, 75]
+}
+
+[sub_resource type="Animation" id="Animation_dvlm0"]
+resource_name = "player_run_up"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [84, 87]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cksjh"]
+_data = {
+"RESET": SubResource("Animation_4teaj"),
+"player_run": SubResource("Animation_pehtk"),
+"player_run_down": SubResource("Animation_8qppx"),
+"player_run_up": SubResource("Animation_dvlm0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7fad"]
+size = Vector2(20, 33)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(196, 112)
+script = ExtResource("1_3mnnk")
+metadata/_edit_group_ = true
+
+[node name="player_sheet" type="Sprite2D" parent="."]
+texture = ExtResource("1_8f7qk")
+hframes = 12
+vframes = 15
+frame = 73
+
+[node name="player_animation_player" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cksjh")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_t7fad")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
