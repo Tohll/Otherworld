@@ -27,5 +27,5 @@ func get_input():
 			$AnimationTree.set("parameters/basic_attack/blend_position",velocity)
 
 
-func _on_animation_tree_animation_finished(anim_name):
+func _on_animation_tree_animation_finished(_anim_name):
 	is_attacking = false

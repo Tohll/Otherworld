@@ -17,6 +17,70 @@ tracks/0/keys = {
 "values": [137]
 }
 
+[sub_resource type="Animation" id="Animation_d8acd"]
+resource_name = "player_attack_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [132, 137]
+}
+
+[sub_resource type="Animation" id="Animation_s66nl"]
+resource_name = "player_basic_attack_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [122, 127]
+}
+
+[sub_resource type="Animation" id="Animation_67vrg"]
+resource_name = "player_basic_attack_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [112, 117]
+}
+
+[sub_resource type="Animation" id="Animation_deb3i"]
+resource_name = "player_attack_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [142, 147]
+}
+
 [sub_resource type="Animation" id="Animation_ksghe"]
 resource_name = "player_idle_down"
 loop_mode = 1
@@ -149,70 +213,6 @@ tracks/0/keys = {
 "values": [84, 87]
 }
 
-[sub_resource type="Animation" id="Animation_d8acd"]
-resource_name = "player_attack_down"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player_sheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [132, 137]
-}
-
-[sub_resource type="Animation" id="Animation_deb3i"]
-resource_name = "player_attack_up"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player_sheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [142, 147]
-}
-
-[sub_resource type="Animation" id="Animation_67vrg"]
-resource_name = "player_basic_attack_right"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player_sheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [112, 117]
-}
-
-[sub_resource type="Animation" id="Animation_s66nl"]
-resource_name = "player_basic_attack_left"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player_sheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [122, 127]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cksjh"]
 _data = {
 "RESET": SubResource("Animation_4teaj"),
@@ -230,8 +230,8 @@ _data = {
 "player_run_up": SubResource("Animation_dvlm0")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7fad"]
-size = Vector2(20, 33)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjxp2"]
+radius = 5.02494
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ubjrp"]
 animation = &"player_basic_attack_left"
@@ -328,7 +328,8 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-10, -80)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(196, 112)
+position = Vector2(198, 112)
+collision_layer = 2
 script = ExtResource("1_3mnnk")
 metadata/_edit_group_ = true
 
@@ -344,8 +345,8 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5.5)
-shape = SubResource("RectangleShape2D_t7fad")
+position = Vector2(0, -3.5)
+shape = SubResource("CircleShape2D_hjxp2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 drag_left_margin = 0.0
