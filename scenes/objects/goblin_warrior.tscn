@@ -73,15 +73,67 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_evgi2"]
 resource_name = "goblinW_walk_down"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("move_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 5]
+}
 
 [sub_resource type="Animation" id="Animation_1t0o1"]
 resource_name = "goblinW_walk_up"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("move_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [18, 23]
+}
 
 [sub_resource type="Animation" id="Animation_nj30o"]
 resource_name = "goblinW_walk_left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("move_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6, 11]
+}
 
 [sub_resource type="Animation" id="Animation_cbssr"]
 resource_name = "goblinW_walk_right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("move_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [12, 17]
+}
 
 [sub_resource type="Animation" id="Animation_c2wdm"]
 resource_name = "goblinW_attack_down"
@@ -172,6 +224,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("move_sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jk11b"]
@@ -289,10 +353,10 @@ graph_offset = Vector2(7, -65)
 metadata/_edit_group_ = true
 
 [node name="move_sprite" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("1_ckyc5")
 hframes = 6
 vframes = 4
+frame = 5
 
 [node name="idle_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_plo77")
@@ -301,7 +365,6 @@ vframes = 4
 frame = 3
 
 [node name="attack_sprite" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("3_2gwih")
 hframes = 6
 vframes = 4
@@ -324,4 +387,4 @@ tree_root = SubResource("AnimationNodeStateMachine_o1i37")
 anim_player = NodePath("../AnimationPlayer")
 parameters/attack/blend_position = Vector2(0, 0)
 parameters/idle/blend_position = Vector2(-0.00249583, 0.0087719)
-parameters/walk/blend_position = Vector2(0, 0)
+parameters/walk/blend_position = Vector2(0.000831962, -0.0087719)
