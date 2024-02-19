@@ -9568,6 +9568,7 @@ z_as_relative = false
 [node name="goblin_warrior" parent="TileMap" instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
+position = Vector2(-101, -2)
 
 [node name="goblin_warrior2" parent="TileMap" instance=ExtResource("3_4ubag")]
 z_index = 1

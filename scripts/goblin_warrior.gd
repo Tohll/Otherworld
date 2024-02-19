@@ -61,4 +61,4 @@ func _on_attack_range_body_exited(_body):
 	is_attacking = false
 
 func _on_attack_zone_body_entered(body):
-	body.take_damage(15)
+	body.take_damage(randi_range(1,15))
