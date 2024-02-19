@@ -3,6 +3,8 @@ extends CharacterBody2D
 const speed = 200
 var is_attacking = false
 
+signal player_hit
+
 func _process(_delta):
 	get_input()
 
@@ -26,6 +28,8 @@ func get_input():
 			$AnimationTree.set("parameters/idle/blend_position",velocity)
 			$AnimationTree.set("parameters/basic_attack/blend_position",velocity)
 
+func take_damage(damages):
+	print("damage : " + str(damages))
 
 func _on_animation_tree_animation_finished(_anim_name):
 	is_attacking = false

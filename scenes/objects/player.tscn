@@ -230,8 +230,7 @@ _data = {
 "player_run_up": SubResource("Animation_dvlm0")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hjxp2"]
-radius = 5.02494
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h24qp"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ubjrp"]
 animation = &"player_basic_attack_left"
@@ -328,7 +327,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-10, -80)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(198, 112)
+position = Vector2(197, 112)
 collision_layer = 2
 script = ExtResource("1_3mnnk")
 metadata/_edit_group_ = true
@@ -346,7 +345,7 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
-shape = SubResource("CircleShape2D_hjxp2")
+shape = SubResource("CapsuleShape2D_h24qp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 drag_left_margin = 0.0

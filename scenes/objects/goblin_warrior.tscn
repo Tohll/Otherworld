@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bgfo873a8tu2i"]
+[gd_scene load_steps=46 format=3 uid="uid://bgfo873a8tu2i"]
 
 [ext_resource type="Texture2D" uid="uid://cvvll6f5q6wi6" path="res://arts/spritesheets/monsters/goblin_warrior/Goblin_Warrior_Move.png" id="1_ckyc5"]
 [ext_resource type="Script" path="res://scripts/goblin_warrior.gd" id="1_t4j8o"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d0c4ai8lammdn" path="res://arts/spritesheets/monsters/goblin_warrior/Goblin_Warrior_Attack.png" id="3_2gwih"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gejql"]
-radius = 8.01561
+radius = 6.0208
 
 [sub_resource type="Animation" id="Animation_wa5vw"]
 length = 0.001
@@ -46,6 +46,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [5]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("attack_zone/attack_colision:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("attack_zone/attack_colision:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 7)]
+}
 
 [sub_resource type="Animation" id="Animation_c2wdm"]
 resource_name = "goblinW_attack_down"
@@ -62,6 +86,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("attack_zone/attack_colision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attack_zone/attack_colision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 10)]
 }
 
 [sub_resource type="Animation" id="Animation_qywvt"]
@@ -80,6 +128,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [6, 11]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("attack_zone/attack_colision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attack_zone/attack_colision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, -1)]
+}
 
 [sub_resource type="Animation" id="Animation_20rqv"]
 resource_name = "goblinW_attack_right"
@@ -97,6 +169,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [12, 17]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("attack_zone/attack_colision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attack_zone/attack_colision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, -1)]
+}
 
 [sub_resource type="Animation" id="Animation_80ero"]
 resource_name = "goblinW_attack_up"
@@ -113,6 +209,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [18, 23]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("attack_zone/attack_colision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attack_zone/attack_colision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -12)]
 }
 
 [sub_resource type="Animation" id="Animation_jfjou"]
@@ -360,18 +480,22 @@ radius = 171.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_01t06"]
 radius = 21.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mc3nv"]
+radius = 15.0
+
 [node name="goblin_warrior" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_t4j8o")
-metadata/_edit_group_ = true
 
 [node name="move_sprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_ckyc5")
 hframes = 6
 vframes = 4
 frame = 5
 
 [node name="idle_sprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_plo77")
 hframes = 4
 vframes = 4
@@ -384,6 +508,7 @@ vframes = 4
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("CircleShape2D_gejql")
 
@@ -403,6 +528,7 @@ parameters/idle/blend_position = Vector2(-0.00249583, 0.0087719)
 parameters/walk/blend_position = Vector2(0.000831962, -0.0087719)
 
 [node name="detection_range" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -410,14 +536,24 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_1klbc")
 
 [node name="attack_range" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
 [node name="attack_radius" type="CollisionShape2D" parent="attack_range"]
 shape = SubResource("CircleShape2D_01t06")
 
-[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[node name="attack_zone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="attack_colision" type="CollisionShape2D" parent="attack_zone"]
+position = Vector2(4, 7)
+shape = SubResource("CircleShape2D_mc3nv")
+disabled = true
+
 [connection signal="body_entered" from="detection_range" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection_range" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="attack_range" to="." method="_on_attack_range_body_entered"]
 [connection signal="body_exited" from="attack_range" to="." method="_on_attack_range_body_exited"]
+[connection signal="body_entered" from="attack_zone" to="." method="_on_attack_zone_body_entered"]

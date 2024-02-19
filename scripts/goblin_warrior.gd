@@ -59,3 +59,6 @@ func _on_attack_range_body_entered(_body):
 
 func _on_attack_range_body_exited(_body):
 	is_attacking = false
+
+func _on_attack_zone_body_entered(body):
+	body.take_damage(15)
