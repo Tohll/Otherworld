@@ -5,17 +5,13 @@ func _ready():
 	max_life = 10
 	current_life = max_life
 	velocity = Vector2.ZERO
-	indicator_position = Vector2(0,15)
-	damage_color = ENEMY_GRAY
+	damage_indicator_position = Vector2(0,15)
+	damage_color = ENEMY_WHITE
 
 func _process(_delta):
 	if !is_dead:
 		set_direction_and_sprite()
-	
-func _physics_process(_delta):
-	if (!is_attacking && !is_dead):
-		move_and_slide()
-	
+
 func set_direction_and_sprite():
 	if (is_attacking):
 		show_sprite("attack_sprite")

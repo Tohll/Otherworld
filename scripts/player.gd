@@ -6,16 +6,13 @@ func _ready():
 	speed = 200
 	max_life = 200
 	current_life = max_life
-	indicator_position = Vector2(0,10)
+	damage_indicator_position = Vector2(0,10)
+	velocity = Vector2.ZERO
 
 func _process(_delta):
 	if !is_dead:
 		get_input()
 
-func _physics_process(_delta):
-	if !is_dead:
-		move_and_slide()
-	
 func get_input():
 	if Input.is_action_just_pressed("player_basic_attack"):
 		$AnimationTree.get("parameters/playback").travel("basic_attack")

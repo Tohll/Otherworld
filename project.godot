@@ -20,6 +20,7 @@ boot_splash/use_filter=false
 
 window/size/viewport_width=768
 window/size/viewport_height=432
+window/size/mode=2
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
