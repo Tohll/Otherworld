@@ -5,7 +5,7 @@ var is_attacking
 var player = null
 
 const DAMAGE_INDICATOR = preload("res://scenes/objects/damage_indicator.tscn")
-const ENEMY_GRAY = Color(0.9,0.9,0.9,1.0)
+const ENEMY_GRAY = Color(1.0,1.0,1.0,1.0)
 
 func _ready():
 	velocity = Vector2.ZERO
@@ -54,10 +54,10 @@ func spawn_effect(effect: PackedScene):
 	if effect:
 		var effect_instance = effect.instantiate()
 		add_child(effect_instance)
-		effect_instance.position = Vector2(0,10)
+		effect_instance.position = Vector2(0,15)
 		return effect_instance
 
-func take_damage(damages):
+func take_damage(damages: int):
 	var indicator = spawn_effect(DAMAGE_INDICATOR)
 	if indicator:
 		indicator.set_str_text(str(damages))

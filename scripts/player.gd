@@ -4,6 +4,8 @@ const SPEED = 200
 const DAMAGE_INDICATOR = preload("res://scenes/objects/damage_indicator.tscn")
 
 var is_attacking = false
+var max_life = 500
+var current_life = max_life
 
 signal player_hit
 
@@ -37,10 +39,14 @@ func spawn_effect(effect: PackedScene):
 		effect_instance.position = Vector2(0,10)
 		return effect_instance
 
-func take_damage(damages):
+func take_damage(damages: int):
 	var indicator = spawn_effect(DAMAGE_INDICATOR)
 	if indicator:
 		indicator.set_str_text(str(damages))
+		current_life = current_life - damages
+		if current_life <= 0:
+			current_life = 0
+		print ("player life : " + str(current_life) + "/" + str(max_life))
 
 func _on_animation_tree_animation_finished(_anim_name):
 	is_attacking = false
