@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-const MAX_LIFE = 500
+const MAX_LIFE = 10
 const DAMAGE_INDICATOR = preload("res://scenes/objects/damage_indicator.tscn")
 const BLOOD_EFFECT = preload("res://scenes/objects/blood_effects.tscn")
+const DEATH_EFFECT = preload("res://scenes/objects/death_particles.tscn")
 const ENEMY_GRAY = Color(1.0,1.0,1.0,1.0)
 
 var speed = 100
 var is_attacking
+var is_dead = false
 var player = null
 var current_life = MAX_LIFE
 
@@ -16,10 +18,11 @@ func _ready():
 	is_attacking = false
 
 func _process(_delta):
-	set_direction_and_sprite()
+	if !is_dead:
+		set_direction_and_sprite()
 	
 func _physics_process(_delta):
-	if (!is_attacking):
+	if (!is_attacking && !is_dead):
 		move_and_slide()
 	
 func set_direction_and_sprite():
@@ -42,10 +45,7 @@ func set_direction_and_sprite():
 		$AnimationTree.set("parameters/idle/blend_position",velocity)
 
 func show_sprite(sprite_name):
-	get_node("attack_sprite").hide()
-	get_node("move_sprite").hide()
-	get_node("idle_sprite").hide()
-	
+	hide_sprites()
 	match (sprite_name):
 		"attack_sprite":
 			get_node("attack_sprite").show()
@@ -70,7 +70,19 @@ func take_damage(damages: int):
 		current_life = current_life - damages
 		if current_life <= 0:
 			current_life = 0
-		print ("gob life : " + str(current_life) + "/" + str(MAX_LIFE))
+			death()
+
+func death():
+	is_dead = true
+	spawn_effect(DEATH_EFFECT)
+
+func die():
+	queue_free()
+
+func hide_sprites():
+	get_node("attack_sprite").hide()
+	get_node("move_sprite").hide()
+	get_node("idle_sprite").hide()
 
 func _on_detection_body_entered(body):
 	player = body
@@ -86,4 +98,5 @@ func _on_attack_range_body_exited(_body):
 	is_attacking = false
 
 func _on_attack_zone_body_entered(body):
-	body.take_damage(randi_range(1,15))
+	if !is_dead:
+		body.take_damage(randi_range(1,15))

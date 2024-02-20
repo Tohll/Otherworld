@@ -9604,3 +9604,173 @@ position = Vector2(575, -30)
 z_index = 1
 z_as_relative = false
 position = Vector2(281, -59)
+
+[node name="goblin_warrior9" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(126, -90)
+
+[node name="goblin_warrior10" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-223, -10)
+
+[node name="goblin_warrior11" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(452, 43)
+
+[node name="goblin_warrior12" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-194, 145)
+
+[node name="goblin_warrior13" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-257, 56)
+
+[node name="goblin_warrior14" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(441, -191)
+
+[node name="goblin_warrior15" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(446, -78)
+
+[node name="goblin_warrior16" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(363, -93)
+
+[node name="goblin_warrior17" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(356, -169)
+
+[node name="goblin_warrior18" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(197, -216)
+
+[node name="goblin_warrior19" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(100, 122)
+
+[node name="goblin_warrior20" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-199, -61)
+
+[node name="goblin_warrior21" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-161, 19)
+
+[node name="goblin_warrior22" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(58, 54)
+
+[node name="goblin_warrior23" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(254, 31)
+
+[node name="goblin_warrior24" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-33, -121)
+
+[node name="goblin_warrior25" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-235, -154)
+
+[node name="goblin_warrior26" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(155, -34)
+
+[node name="goblin_warrior27" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-36, 86)
+
+[node name="goblin_warrior28" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-93, -173)
+
+[node name="goblin_warrior29" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-129, 93)
+
+[node name="goblin_warrior30" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(159, 39)
+
+[node name="goblin_warrior31" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(205, -97)
+
+[node name="goblin_warrior32" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(188, -166)
+
+[node name="goblin_warrior33" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(343, 43)
+
+[node name="goblin_warrior34" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(278, -149)
+
+[node name="goblin_warrior35" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(62, -160)
+
+[node name="goblin_warrior36" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(123, -149)
+
+[node name="goblin_warrior37" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-135, -190)
+
+[node name="goblin_warrior38" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-37, -213)
+
+[node name="goblin_warrior39" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(38, -210)
+
+[node name="goblin_warrior40" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(72, -221)
+
+[node name="goblin_warrior41" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(118, -226)
+
+[node name="goblin_warrior42" parent="TileMap" instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(260, -238)
