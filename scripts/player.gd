@@ -3,10 +3,10 @@ extends CharacterBody2D
 const SPEED = 200
 const DAMAGE_INDICATOR = preload("res://scenes/objects/damage_indicator.tscn")
 const BLOOD_EFFECT = preload("res://scenes/objects/blood_effects.tscn")
+const MAX_LIFE = 500
 
 var is_attacking = false
-var max_life = 500
-var current_life = max_life
+var current_life = MAX_LIFE
 
 signal player_hit
 
@@ -48,7 +48,6 @@ func take_damage(damages: int):
 		current_life = current_life - damages
 		if current_life <= 0:
 			current_life = 0
-		print ("player life : " + str(current_life) + "/" + str(max_life))
 
 func _on_animation_tree_animation_finished(_anim_name):
 	is_attacking = false

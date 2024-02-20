@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
-var speed = 100
-var is_attacking
-var player = null
-
+const MAX_LIFE = 500
 const DAMAGE_INDICATOR = preload("res://scenes/objects/damage_indicator.tscn")
 const BLOOD_EFFECT = preload("res://scenes/objects/blood_effects.tscn")
 const ENEMY_GRAY = Color(1.0,1.0,1.0,1.0)
+
+var speed = 100
+var is_attacking
+var player = null
+var current_life = MAX_LIFE
+
 
 func _ready():
 	velocity = Vector2.ZERO
@@ -64,6 +67,10 @@ func take_damage(damages: int):
 		indicator.position = Vector2(0,15)
 		indicator.set_str_text(str(damages))
 		indicator.set_str_color(ENEMY_GRAY)
+		current_life = current_life - damages
+		if current_life <= 0:
+			current_life = 0
+		print ("gob life : " + str(current_life) + "/" + str(MAX_LIFE))
 
 func _on_detection_body_entered(body):
 	player = body
