@@ -4,6 +4,9 @@ var speed = 100
 var is_attacking
 var player = null
 
+const DAMAGE_INDICATOR = preload("res://scenes/objects/damage_indicator.tscn")
+const ENEMY_GRAY = Color(0.9,0.9,0.9,1.0)
+
 func _ready():
 	velocity = Vector2.ZERO
 	is_attacking = false
@@ -46,6 +49,19 @@ func show_sprite(sprite_name):
 			get_node("move_sprite").show()
 		"idle_sprite":
 			get_node("idle_sprite").show()
+
+func spawn_effect(effect: PackedScene):
+	if effect:
+		var effect_instance = effect.instantiate()
+		add_child(effect_instance)
+		effect_instance.position = Vector2(0,10)
+		return effect_instance
+
+func take_damage(damages):
+	var indicator = spawn_effect(DAMAGE_INDICATOR)
+	if indicator:
+		indicator.set_str_text(str(damages))
+		indicator.set_str_color(ENEMY_GRAY)
 
 func _on_detection_body_entered(body):
 	player = body

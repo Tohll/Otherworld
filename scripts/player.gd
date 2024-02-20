@@ -44,3 +44,6 @@ func take_damage(damages):
 
 func _on_animation_tree_animation_finished(_anim_name):
 	is_attacking = false
+
+func _on_basic_attack_zone_body_entered(body):
+	body.take_damage(randi_range(1,15))
