@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 200
 const DAMAGE_INDICATOR = preload("res://scenes/objects/damage_indicator.tscn")
+const BLOOD_EFFECT = preload("res://scenes/objects/blood_effects.tscn")
 
 var is_attacking = false
 var max_life = 500
@@ -36,12 +37,13 @@ func spawn_effect(effect: PackedScene):
 	if effect:
 		var effect_instance = effect.instantiate()
 		add_child(effect_instance)
-		effect_instance.position = Vector2(0,10)
 		return effect_instance
 
 func take_damage(damages: int):
 	var indicator = spawn_effect(DAMAGE_INDICATOR)
+	spawn_effect(BLOOD_EFFECT)
 	if indicator:
+		indicator.position = Vector2(0,10)
 		indicator.set_str_text(str(damages))
 		current_life = current_life - damages
 		if current_life <= 0:
