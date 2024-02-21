@@ -1,5 +1,7 @@
 extends AbsCaracter
 
+var life_bar = null
+
 signal player_death
 
 func _ready():
@@ -8,6 +10,7 @@ func _ready():
 	current_life = max_life
 	damage_indicator_position = Vector2(0,10)
 	velocity = Vector2.ZERO
+	is_player = true
 
 func _process(_delta):
 	if !is_dead:

@@ -521,7 +521,7 @@ graph_offset = Vector2(-10, -80)
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhaa6"]
 radius = 27.0185
 
-[node name="Player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_3mnnk")
 
@@ -529,7 +529,7 @@ script = ExtResource("1_3mnnk")
 texture = ExtResource("1_8f7qk")
 hframes = 12
 vframes = 15
-frame = 11
+frame = 13
 
 [node name="player_animation_player" type="AnimationPlayer" parent="."]
 libraries = {

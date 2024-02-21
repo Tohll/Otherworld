@@ -5,13 +5,16 @@ const BLOOD_EFFECT = preload("res://scenes/objects/blood_effects.tscn")
 const DEATH_EFFECT = preload("res://scenes/objects/death_particles.tscn")
 const ENEMY_WHITE = Color(1.0,1.0,1.0,1.0)
 
-var speed
+signal player_hit(damages: int)
+
+var speed = null
+var is_player = false
 var is_attacking =false
 var is_dead = false
 var player = null
-var max_life
-var current_life
-var damage_indicator_position
+var max_life = null
+var current_life = null
+var damage_indicator_position = null
 var damage_color = null
 
 func _physics_process(_delta):
@@ -36,6 +39,9 @@ func take_damage(damages: int):
 			current_life = current_life - damages
 			if current_life <= 0:
 				current_life = 0
+			if is_player:
+				emit_signal("player_hit",damages)
+			if current_life == 0:
 				death()
 
 func death():
