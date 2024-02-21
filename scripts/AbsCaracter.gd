@@ -5,7 +5,7 @@ const BLOOD_EFFECT = preload("res://scenes/objects/blood_effects.tscn")
 const DEATH_EFFECT = preload("res://scenes/objects/death_particles.tscn")
 const ENEMY_WHITE = Color(1.0,1.0,1.0,1.0)
 
-signal player_hit(damages: int)
+signal player_life_update(life_value: int)
 
 var speed = null
 var is_player = false
@@ -37,11 +37,10 @@ func take_damage(damages: int):
 			if damage_color:
 				indicator.set_str_color(damage_color)
 			current_life = current_life - damages
+			if is_player:
+				emit_signal("player_life_update",current_life)
 			if current_life <= 0:
 				current_life = 0
-			if is_player:
-				emit_signal("player_hit",damages)
-			if current_life == 0:
 				death()
 
 func death():

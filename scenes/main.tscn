@@ -9793,5 +9793,5 @@ texture_progress = ExtResource("6_c5evb")
 texture_progress_offset = Vector2(4, 2)
 script = ExtResource("4_gph3a")
 
-[connection signal="player_hit" from="terrain/player" to="CanvasLayer/TextureProgressBar" method="_on_player_player_hit"]
+[connection signal="player_life_update" from="terrain/player" to="CanvasLayer/TextureProgressBar" method="_on_player_player_life_update"]
 [connection signal="player_ready" from="terrain/player" to="CanvasLayer/TextureProgressBar" method="_on_player_player_ready"]

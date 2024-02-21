@@ -1,6 +1,6 @@
 extends AbsCaracter
 
-var life_bar = null
+var life_regen = 2
 
 signal player_death
 signal player_ready(max_life: int)
@@ -45,4 +45,12 @@ func _on_animation_tree_animation_finished(_anim_name):
 	is_attacking = false
 
 func _on_basic_attack_zone_body_entered(body):
-	body.take_damage(randi_range(1,15))
+	body.take_damage(randi_range(8,15))
+
+func _on_life_regen_timeout():
+	if current_life < max_life:
+		if current_life + life_regen > max_life:
+			current_life = max_life
+		else:
+			current_life += life_regen
+		emit_signal("player_life_update", current_life)
