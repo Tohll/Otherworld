@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcajbx63ud8l2"]
+[gd_scene load_steps=11 format=3 uid="uid://bcajbx63ud8l2"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_84vgr"]
 [ext_resource type="PackedScene" uid="uid://dbnw6qu8rj2rm" path="res://scenes/objects/player.tscn" id="1_jh2jn"]
 [ext_resource type="Texture2D" uid="uid://03uyi18054r7" path="res://arts/spritesheets/MainLev2.0.png" id="2_0sxhh"]
 [ext_resource type="PackedScene" uid="uid://bgfo873a8tu2i" path="res://scenes/objects/goblin_warrior.tscn" id="3_4ubag"]
@@ -9556,6 +9557,7 @@ terrain_set_0/terrain_0/color = Color(0.580392, 0, 0.737255, 1)
 sources/0 = SubResource("TileSetAtlasSource_g8gx8")
 
 [node name="Main" type="Node"]
+script = ExtResource("1_84vgr")
 
 [node name="terrain" type="TileMap" parent="."]
 z_as_relative = false
@@ -9793,5 +9795,14 @@ texture_progress = ExtResource("6_c5evb")
 texture_progress_offset = Vector2(4, 2)
 script = ExtResource("4_gph3a")
 
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 40.0
+offset_right = 65.0
+offset_bottom = 71.0
+action_mode = 0
+text = "Reset"
+
 [connection signal="player_life_update" from="terrain/player" to="CanvasLayer/TextureProgressBar" method="_on_player_player_life_update"]
 [connection signal="player_ready" from="terrain/player" to="CanvasLayer/TextureProgressBar" method="_on_player_player_ready"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
