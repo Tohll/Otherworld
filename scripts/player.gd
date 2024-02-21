@@ -45,7 +45,7 @@ func _on_animation_tree_animation_finished(_anim_name):
 	is_attacking = false
 
 func _on_basic_attack_zone_body_entered(body):
-	body.take_damage(randi_range(8,15))
+	body.take_damage(randi_range(5,9), position)
 
 func _on_life_regen_timeout():
 	if current_life < max_life:

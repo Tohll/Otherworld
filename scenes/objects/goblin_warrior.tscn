@@ -648,8 +648,13 @@ position = Vector2(4, 7)
 shape = SubResource("CircleShape2D_mc3nv")
 disabled = true
 
+[node name="knockback" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="body_entered" from="detection_range" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection_range" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="attack_range" to="." method="_on_attack_range_body_entered"]
 [connection signal="body_exited" from="attack_range" to="." method="_on_attack_range_body_exited"]
 [connection signal="body_entered" from="attack_zone" to="." method="_on_attack_zone_body_entered"]
+[connection signal="timeout" from="knockback" to="." method="_on_knockback_timeout"]

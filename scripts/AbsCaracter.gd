@@ -16,9 +16,11 @@ var max_life = null
 var current_life = null
 var damage_indicator_position = null
 var damage_color = null
+var knockback_vulnerability = 0
+var knockbacked = false
 
 func _physics_process(_delta):
-	if (!is_attacking && !is_dead):
+	if (!is_attacking && !is_dead || knockbacked && !is_dead):
 		move_and_slide()
 
 func spawn_effect(effect: PackedScene):
@@ -27,7 +29,7 @@ func spawn_effect(effect: PackedScene):
 		add_child(effect_instance)
 		return effect_instance
 
-func take_damage(damages: int):
+func take_damage(damages: int, attacker_position: Vector2):
 	if !is_dead:
 		var indicator = spawn_effect(DAMAGE_INDICATOR)
 		spawn_effect(BLOOD_EFFECT)
@@ -39,6 +41,10 @@ func take_damage(damages: int):
 			current_life = current_life - damages
 			if is_player:
 				emit_signal("player_life_update",current_life)
+			else:
+				knockbacked = true
+				$knockback.start()
+				velocity = (position - attacker_position).normalized() * (knockback_vulnerability * speed)
 			if current_life <= 0:
 				current_life = 0
 				death()
