@@ -7,7 +7,7 @@ func _ready():
 	velocity = Vector2.ZERO
 	damage_indicator_position = Vector2(0,15)
 	damage_color = ENEMY_WHITE
-	knockback_vulnerability = 4
+	damage_range = Vector2(5,15)
 
 func _process(_delta):
 	if !is_dead:
@@ -64,7 +64,7 @@ func _on_attack_range_body_exited(_body):
 
 func _on_attack_zone_body_entered(body):
 	if !is_dead:
-		body.take_damage(randi_range(1,15),Vector2.ZERO)
+		body.take_damage(randi_range(damage_range.x,damage_range.y),Vector2.ZERO)
 
 func _on_knockback_timeout():
 	is_knockbacked = false
