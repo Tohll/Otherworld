@@ -9571,215 +9571,480 @@ layer_0/tile_data = PackedInt32Array(4194411, 5046272, 19, 4128875, 5111808, 19,
 z_index = 1
 z_as_relative = false
 
-[node name="goblin_warrior" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-301, -114)
 
-[node name="goblin_warrior2" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior2" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(259, -244)
 
-[node name="goblin_warrior3" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior3" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-338, -60)
 
-[node name="goblin_warrior4" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior4" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-226, 270)
 
-[node name="goblin_warrior5" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior5" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(254, 128)
 
-[node name="goblin_warrior6" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior6" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(422, 149)
 
-[node name="goblin_warrior7" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior7" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(575, -30)
 
-[node name="goblin_warrior8" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior8" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(281, -59)
 
-[node name="goblin_warrior9" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior9" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(372, -270)
 
-[node name="goblin_warrior10" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior10" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-437, -6)
 
-[node name="goblin_warrior11" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior11" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(452, 43)
 
-[node name="goblin_warrior12" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior12" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-194, 145)
 
-[node name="goblin_warrior13" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior13" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-257, 56)
 
-[node name="goblin_warrior14" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior14" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(441, -191)
 
-[node name="goblin_warrior15" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior15" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(446, -78)
 
-[node name="goblin_warrior16" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior16" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(363, -93)
 
-[node name="goblin_warrior17" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior17" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(356, -169)
 
-[node name="goblin_warrior18" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior18" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(197, -216)
 
-[node name="goblin_warrior19" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior19" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(179, 246)
 
-[node name="goblin_warrior20" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior20" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-339, -193)
 
-[node name="goblin_warrior21" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior21" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-287, 144)
 
-[node name="goblin_warrior22" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior22" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(228, 181)
 
-[node name="goblin_warrior23" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior23" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(254, 31)
 
-[node name="goblin_warrior24" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior24" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-128, -280)
 
-[node name="goblin_warrior25" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior25" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-235, -154)
 
-[node name="goblin_warrior26" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior26" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(340, 103)
 
-[node name="goblin_warrior27" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior27" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-335, 52)
 
-[node name="goblin_warrior28" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior28" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-226, -265)
 
-[node name="goblin_warrior29" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior29" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-143, 207)
 
-[node name="goblin_warrior30" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior30" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(201, 104)
 
-[node name="goblin_warrior31" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior31" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(330, -326)
 
-[node name="goblin_warrior32" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior32" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(426, -276)
 
-[node name="goblin_warrior33" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior33" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(343, 43)
 
-[node name="goblin_warrior34" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior34" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(278, -149)
 
-[node name="goblin_warrior35" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior35" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(105, -272)
 
-[node name="goblin_warrior36" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior36" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(192, -294)
 
-[node name="goblin_warrior37" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior37" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-408, -168)
 
-[node name="goblin_warrior38" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior38" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-166, -322)
 
-[node name="goblin_warrior39" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior39" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-38, -279)
 
-[node name="goblin_warrior40" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior40" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(93, -348)
 
-[node name="goblin_warrior41" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior41" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-43, -358)
 
-[node name="goblin_warrior42" parent="terrain" instance=ExtResource("3_4ubag")]
+[node name="goblin_warrior42" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
 z_index = 1
 z_as_relative = false
 position = Vector2(30, -290)
+
+[node name="goblin_warrior43" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(78, -230)
+
+[node name="goblin_warrior44" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-271, -256)
+
+[node name="goblin_warrior45" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(74, -297)
+
+[node name="goblin_warrior46" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(57, -340)
+
+[node name="goblin_warrior47" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-9, -393)
+
+[node name="goblin_warrior48" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-80, -396)
+
+[node name="goblin_warrior49" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-129, -381)
+
+[node name="goblin_warrior50" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-172, -346)
+
+[node name="goblin_warrior51" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-212, -312)
+
+[node name="goblin_warrior52" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-198, -289)
+
+[node name="goblin_warrior53" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-129, -329)
+
+[node name="goblin_warrior54" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-84, -323)
+
+[node name="goblin_warrior55" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-14, -347)
+
+[node name="goblin_warrior56" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(300, -215)
+
+[node name="goblin_warrior57" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(375, -130)
+
+[node name="goblin_warrior58" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(407, -30)
+
+[node name="goblin_warrior59" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(323, 187)
+
+[node name="goblin_warrior60" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(132, 248)
+
+[node name="goblin_warrior61" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(72, 222)
+
+[node name="goblin_warrior62" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(116, 197)
+
+[node name="goblin_warrior63" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(167, 168)
+
+[node name="goblin_warrior64" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(46, 178)
+
+[node name="goblin_warrior65" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-36, 186)
+
+[node name="goblin_warrior66" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-108, 211)
+
+[node name="goblin_warrior67" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-64, 229)
+
+[node name="goblin_warrior68" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-17, 232)
+
+[node name="goblin_warrior69" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(28, 245)
+
+[node name="goblin_warrior70" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-43, 267)
+
+[node name="goblin_warrior71" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-98, 260)
+
+[node name="goblin_warrior72" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-153, 255)
+
+[node name="goblin_warrior73" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-197, 227)
+
+[node name="goblin_warrior74" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-235, 221)
+
+[node name="goblin_warrior75" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-279, 203)
+
+[node name="goblin_warrior76" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-346, 120)
+
+[node name="goblin_warrior77" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-396, 87)
+
+[node name="goblin_warrior78" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-390, 31)
+
+[node name="goblin_warrior79" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-393, -34)
+
+[node name="goblin_warrior80" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-413, -82)
+
+[node name="goblin_warrior81" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-375, -113)
+
+[node name="goblin_warrior82" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-369, -223)
+
+[node name="goblin_warrior83" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-319, -262)
+
+[node name="goblin_warrior84" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-276, -197)
+
+[node name="goblin_warrior85" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(157, -328)
+
+[node name="goblin_warrior86" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(150, -267)
+
+[node name="goblin_warrior87" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(260, -305)
+
+[node name="goblin_warrior88" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(208, -342)
+
+[node name="goblin_warrior89" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(360, -220)
+
+[node name="goblin_warrior90" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(435, -137)
+
+[node name="goblin_warrior91" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(345, -27)
+
+[node name="goblin_warrior92" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(304, -1)
+
+[node name="goblin_warrior93" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(287, 74)
+
+[node name="goblin_warrior94" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(276, 182)
+
+[node name="goblin_warrior95" parent="terrain" groups=["creeps"] instance=ExtResource("3_4ubag")]
+z_index = 1
+z_as_relative = false
+position = Vector2(389, 91)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

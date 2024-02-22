@@ -14,15 +14,13 @@ func _process(_delta):
 		set_direction_and_sprite()
 
 func set_direction_and_sprite():
-	if !knockbacked:
+	if !is_knockbacked:
 		if (is_attacking):
 			show_sprite("attack_sprite")
 			$AnimationTree.get("parameters/playback").travel("attack")
 			return
-			
 		if (player):
 			velocity = position.direction_to(player.position) * speed
-			
 		if velocity == Vector2.ZERO:
 			$AnimationTree.get("parameters/playback").travel("idle")
 			show_sprite("idle_sprite")
@@ -69,4 +67,4 @@ func _on_attack_zone_body_entered(body):
 		body.take_damage(randi_range(1,15),Vector2.ZERO)
 
 func _on_knockback_timeout():
-	knockbacked = false
+	is_knockbacked = false

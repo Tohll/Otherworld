@@ -571,7 +571,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(7, -65)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1klbc"]
-radius = 171.0
+radius = 286.002
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_01t06"]
 radius = 21.0
@@ -624,7 +624,6 @@ parameters/idle/blend_position = Vector2(-0.00249583, 0.0087719)
 parameters/walk/blend_position = Vector2(0.000831962, -0.0087719)
 
 [node name="detection_range" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
