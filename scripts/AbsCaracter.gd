@@ -16,11 +16,14 @@ var is_dead = false
 var is_knockbacked = false
 var is_dashing = false
 var is_dodging = false
+var is_comboting = false
 var player = null
 var max_life = null
 var current_life = null
 var damage_indicator_position = null
 var damage_color = null
+var combo_stage = 0
+var max_combo = 2
 
 func _physics_process(_delta):
 	if (!is_attacking && !is_dead || is_knockbacked):
