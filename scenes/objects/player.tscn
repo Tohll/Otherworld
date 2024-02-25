@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://dbnw6qu8rj2rm"]
+[gd_scene load_steps=72 format=3 uid="uid://dbnw6qu8rj2rm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3mnnk"]
 [ext_resource type="Texture2D" uid="uid://xm6svq7phsgw" path="res://arts/spritesheets/player/Warrior_spritesheet_allanim.png" id="1_8f7qk"]
@@ -761,9 +761,13 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, 0)]
 }
+
+[sub_resource type="Animation" id="Animation_a36b8"]
+resource_name = "player_special"
+length = 0.5
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cksjh"]
 _data = {
@@ -788,7 +792,8 @@ _data = {
 "player_run_left": SubResource("Animation_pehtk"),
 "player_run_right": SubResource("Animation_fnytl"),
 "player_run_up": SubResource("Animation_dvlm0"),
-"player_secondary_attack": SubResource("Animation_856ha")
+"player_secondary_attack": SubResource("Animation_856ha"),
+"player_special": SubResource("Animation_a36b8")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h24qp"]
@@ -921,10 +926,6 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gtq32"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_npf8q"]
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q22cd"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n3t48"]
@@ -952,6 +953,8 @@ switch_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fnrf0"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2k8fd"]
 states/Start/position = Vector2(246, 122.406)
 states/basic_attack/node = SubResource("AnimationNodeBlendSpace2D_sfnh2")
@@ -966,7 +969,7 @@ states/player_secondary_attack/node = SubResource("AnimationNodeAnimation_86yw2"
 states/player_secondary_attack/position = Vector2(630.5, -40)
 states/run/node = SubResource("AnimationNodeBlendSpace2D_vobn3")
 states/run/position = Vector2(721.5, 122.75)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_tbm05"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_yc8mk"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_nfww7"), "idle", "basic_attack", SubResource("AnimationNodeStateMachineTransition_sjruj"), "run", "basic_attack", SubResource("AnimationNodeStateMachineTransition_gtq32"), "basic_attack", "idle", SubResource("AnimationNodeStateMachineTransition_npf8q"), "idle", "dodge", SubResource("AnimationNodeStateMachineTransition_q22cd"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_n3t48"), "run", "dodge", SubResource("AnimationNodeStateMachineTransition_6xfjk"), "basic_attack", "dodge", SubResource("AnimationNodeStateMachineTransition_j1ce0"), "idle", "normal_C1", SubResource("AnimationNodeStateMachineTransition_hfk22"), "normal_C1", "idle", SubResource("AnimationNodeStateMachineTransition_qr0cl"), "basic_attack", "normal_C1", SubResource("AnimationNodeStateMachineTransition_hetms"), "normal_C1", "dodge", SubResource("AnimationNodeStateMachineTransition_52py4"), "idle", "player_secondary_attack", SubResource("AnimationNodeStateMachineTransition_4kuop"), "player_secondary_attack", "idle", SubResource("AnimationNodeStateMachineTransition_wkayb")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_tbm05"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_yc8mk"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_nfww7"), "idle", "basic_attack", SubResource("AnimationNodeStateMachineTransition_sjruj"), "run", "basic_attack", SubResource("AnimationNodeStateMachineTransition_gtq32"), "idle", "dodge", SubResource("AnimationNodeStateMachineTransition_q22cd"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_n3t48"), "run", "dodge", SubResource("AnimationNodeStateMachineTransition_6xfjk"), "basic_attack", "dodge", SubResource("AnimationNodeStateMachineTransition_j1ce0"), "idle", "normal_C1", SubResource("AnimationNodeStateMachineTransition_hfk22"), "normal_C1", "idle", SubResource("AnimationNodeStateMachineTransition_qr0cl"), "basic_attack", "normal_C1", SubResource("AnimationNodeStateMachineTransition_hetms"), "normal_C1", "dodge", SubResource("AnimationNodeStateMachineTransition_52py4"), "idle", "player_secondary_attack", SubResource("AnimationNodeStateMachineTransition_4kuop"), "player_secondary_attack", "idle", SubResource("AnimationNodeStateMachineTransition_wkayb"), "basic_attack", "idle", SubResource("AnimationNodeStateMachineTransition_fnrf0")]
 graph_offset = Vector2(-247, -90)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhaa6"]
@@ -980,7 +983,7 @@ script = ExtResource("1_3mnnk")
 texture = ExtResource("1_8f7qk")
 hframes = 12
 vframes = 15
-frame = 18
+frame = 11
 
 [node name="player_animation_player" type="AnimationPlayer" parent="."]
 libraries = {

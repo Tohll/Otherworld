@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfp0wabqeejbl"]
+
+[ext_resource type="Script" path="res://scripts/tornado_effect.gd" id="1_6j3by"]
+[ext_resource type="Texture2D" uid="uid://cirv7s666vyqf" path="res://arts/spritesheets/effects/Retro Impact Effect Pack 2 F.png" id="2_kj6pu"]
+
+[sub_resource type="Animation" id="Animation_6y4yl"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_6mnlp"]
+resource_name = "tornado_effect"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [170, 173]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpx66"]
+_data = {
+"RESET": SubResource("Animation_6y4yl"),
+"tornado_effect": SubResource("Animation_6mnlp")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5q3y"]
+radius = 24.0208
+
+[node name="tornado_effect" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_6j3by")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kj6pu")
+hframes = 10
+vframes = 18
+frame = 170
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kpx66")
+}
+autoplay = "tornado_effect"
+
+[node name="effect_end" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o5q3y")
+
+[connection signal="body_entered" from="." to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="effect_end" to="." method="_on_effect_end_timeout"]
