@@ -2,10 +2,16 @@ extends AbsCaracter
 
 const WIND_EFFECT = preload("res://scenes/objects/wind_effect.tscn")
 const TORNADO_EFFECT = preload("res://scenes/objects/tornado_effect.tscn")
+const FIRE_EFFECT = preload("res://scenes/objects/fire_effect.tscn")
+const EXPLOSION_EFFECT = preload("res://scenes/objects/explosion_effect.tscn")
 
 var life_regen = 2
 var last_attack = null
 var current_alch_effect = null
+var current_zone_attack = null
+var current_explosion = 0
+var max_explosion = 4
+var is_casting = false
 
 signal player_death
 signal player_ready(max_life: int)
@@ -54,9 +60,19 @@ func attacks_and_specials():
 					$AnimationTree.get("parameters/playback").travel("normal_C1")
 					velocity = Vector2.ZERO
 					return
+				#wind
 				if Input.is_action_just_pressed("alch_0") && !is_attacking && !is_dashing && !is_dodging:
+					$AnimationTree.get("parameters/playback").travel("player_special_move")
 					is_attacking = true
 					current_alch_effect = spawn_effect(WIND_EFFECT)
+					current_alch_effect.connect("alch_end",alchemy_end)
+					velocity = Vector2.ZERO
+					return
+				#fire
+				if Input.is_action_just_pressed("alch_1") && !is_attacking && !is_dashing && !is_dodging:
+					$AnimationTree.get("parameters/playback").travel("player_special_move")
+					is_attacking = true
+					current_alch_effect = spawn_effect(FIRE_EFFECT)
 					current_alch_effect.connect("alch_end",alchemy_end)
 					velocity = Vector2.ZERO
 					return
@@ -72,6 +88,29 @@ func attacks_and_specials():
 					current_alch_effect.connect("alch_end",alchemy_end)
 					current_alch_effect.velocity = $AnimationTree.get("parameters/basic_attack/blend_position").normalized() * 300
 					return
+			"fire_effect":
+				#fire explosion
+				if Input.is_action_just_pressed("alch_1") && !is_attacking && !is_dashing && !is_dodging:
+					is_attacking = true
+					current_zone_attack = EXPLOSION_EFFECT
+					is_casting = true
+					$AnimationTree.get("parameters/playback").travel("player_sword_ground")
+					return
+
+func spawn_random_explosion():
+	if current_explosion <= max_explosion:
+		current_explosion += 1
+		var pos_x = randi_range(-100,100)
+		var pos_y = randi_range(-100,100)
+		var effect = spawn_effect(current_zone_attack)
+		effect.position.x = pos_x
+		effect.position.y = pos_y
+		$random_explosion.start()
+	else:
+		current_explosion = 0
+		current_zone_attack = null
+		is_attacking = false
+		is_casting = false
 
 func alchemy_end(spell_name):
 	is_attacking = false
@@ -83,13 +122,14 @@ func alchemy_end(spell_name):
 	current_alch_effect = null
 
 func dodging():
-	is_attacking = false
-	is_dodging = true
-	disable_colision()
-	velocity = $AnimationTree.get("parameters/idle/blend_position").normalized() * (speed * dashing_speed)
-	velocity = -velocity
-	$AnimationTree.get("parameters/playback").travel("dodge")
-	$AnimationTree.set("parameters/dodge/blend_position",velocity)
+	if !is_casting:
+		is_attacking = false
+		is_dodging = true
+		disable_colision()
+		velocity = $AnimationTree.get("parameters/idle/blend_position").normalized() * (speed * dashing_speed)
+		velocity = -velocity
+		$AnimationTree.get("parameters/playback").travel("dodge")
+		$AnimationTree.set("parameters/dodge/blend_position",velocity)
 
 func dashing():
 	is_dashing = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=72 format=3 uid="uid://dbnw6qu8rj2rm"]
+[gd_scene load_steps=80 format=3 uid="uid://dbnw6qu8rj2rm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3mnnk"]
 [ext_resource type="Texture2D" uid="uid://xm6svq7phsgw" path="res://arts/spritesheets/player/Warrior_spritesheet_allanim.png" id="1_8f7qk"]
 
 [sub_resource type="Animation" id="Animation_4teaj"]
+length = 0.5
 
 [sub_resource type="Animation" id="Animation_d8acd"]
 resource_name = "player_attack_down"
@@ -769,6 +770,52 @@ tracks/3/keys = {
 resource_name = "player_special"
 length = 0.5
 
+[sub_resource type="Animation" id="Animation_35dsv"]
+resource_name = "player_special_move"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [170, 173]
+}
+
+[sub_resource type="Animation" id="Animation_vejv2"]
+resource_name = "player_sword_ground"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [156, 169]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_random_explosion"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cksjh"]
 _data = {
 "RESET": SubResource("Animation_4teaj"),
@@ -793,7 +840,9 @@ _data = {
 "player_run_right": SubResource("Animation_fnytl"),
 "player_run_up": SubResource("Animation_dvlm0"),
 "player_secondary_attack": SubResource("Animation_856ha"),
-"player_special": SubResource("Animation_a36b8")
+"player_special": SubResource("Animation_a36b8"),
+"player_special_move": SubResource("Animation_35dsv"),
+"player_sword_ground": SubResource("Animation_vejv2")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h24qp"]
@@ -892,6 +941,12 @@ blend_mode = 1
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_86yw2"]
 animation = &"player_secondary_attack"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kdpfr"]
+animation = &"player_special_move"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ibyeh"]
+animation = &"player_sword_ground"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m845d"]
 animation = &"player_run_left"
 
@@ -955,6 +1010,16 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fnrf0"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qoa43"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5f85d"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0n357"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hnamf"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2k8fd"]
 states/Start/position = Vector2(246, 122.406)
 states/basic_attack/node = SubResource("AnimationNodeBlendSpace2D_sfnh2")
@@ -967,10 +1032,14 @@ states/normal_C1/node = SubResource("AnimationNodeBlendSpace2D_gradv")
 states/normal_C1/position = Vector2(62.5, 54)
 states/player_secondary_attack/node = SubResource("AnimationNodeAnimation_86yw2")
 states/player_secondary_attack/position = Vector2(630.5, -40)
+states/player_special_move/node = SubResource("AnimationNodeAnimation_kdpfr")
+states/player_special_move/position = Vector2(313, 231.5)
+states/player_sword_ground/node = SubResource("AnimationNodeAnimation_ibyeh")
+states/player_sword_ground/position = Vector2(566.5, 223.5)
 states/run/node = SubResource("AnimationNodeBlendSpace2D_vobn3")
 states/run/position = Vector2(721.5, 122.75)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_tbm05"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_yc8mk"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_nfww7"), "idle", "basic_attack", SubResource("AnimationNodeStateMachineTransition_sjruj"), "run", "basic_attack", SubResource("AnimationNodeStateMachineTransition_gtq32"), "idle", "dodge", SubResource("AnimationNodeStateMachineTransition_q22cd"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_n3t48"), "run", "dodge", SubResource("AnimationNodeStateMachineTransition_6xfjk"), "basic_attack", "dodge", SubResource("AnimationNodeStateMachineTransition_j1ce0"), "idle", "normal_C1", SubResource("AnimationNodeStateMachineTransition_hfk22"), "normal_C1", "idle", SubResource("AnimationNodeStateMachineTransition_qr0cl"), "basic_attack", "normal_C1", SubResource("AnimationNodeStateMachineTransition_hetms"), "normal_C1", "dodge", SubResource("AnimationNodeStateMachineTransition_52py4"), "idle", "player_secondary_attack", SubResource("AnimationNodeStateMachineTransition_4kuop"), "player_secondary_attack", "idle", SubResource("AnimationNodeStateMachineTransition_wkayb"), "basic_attack", "idle", SubResource("AnimationNodeStateMachineTransition_fnrf0")]
-graph_offset = Vector2(-247, -90)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_tbm05"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_yc8mk"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_nfww7"), "idle", "basic_attack", SubResource("AnimationNodeStateMachineTransition_sjruj"), "run", "basic_attack", SubResource("AnimationNodeStateMachineTransition_gtq32"), "idle", "dodge", SubResource("AnimationNodeStateMachineTransition_q22cd"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_n3t48"), "run", "dodge", SubResource("AnimationNodeStateMachineTransition_6xfjk"), "basic_attack", "dodge", SubResource("AnimationNodeStateMachineTransition_j1ce0"), "idle", "normal_C1", SubResource("AnimationNodeStateMachineTransition_hfk22"), "normal_C1", "idle", SubResource("AnimationNodeStateMachineTransition_qr0cl"), "basic_attack", "normal_C1", SubResource("AnimationNodeStateMachineTransition_hetms"), "normal_C1", "dodge", SubResource("AnimationNodeStateMachineTransition_52py4"), "idle", "player_secondary_attack", SubResource("AnimationNodeStateMachineTransition_4kuop"), "player_secondary_attack", "idle", SubResource("AnimationNodeStateMachineTransition_wkayb"), "basic_attack", "idle", SubResource("AnimationNodeStateMachineTransition_fnrf0"), "idle", "player_special_move", SubResource("AnimationNodeStateMachineTransition_qoa43"), "player_special_move", "idle", SubResource("AnimationNodeStateMachineTransition_5f85d"), "idle", "player_sword_ground", SubResource("AnimationNodeStateMachineTransition_0n357"), "player_sword_ground", "idle", SubResource("AnimationNodeStateMachineTransition_hnamf")]
+graph_offset = Vector2(-98, 7)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhaa6"]
 radius = 37.0
@@ -983,7 +1052,7 @@ script = ExtResource("1_3mnnk")
 texture = ExtResource("1_8f7qk")
 hframes = 12
 vframes = 15
-frame = 11
+frame = 169
 
 [node name="player_animation_player" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1022,7 +1091,12 @@ autostart = true
 wait_time = 0.2
 one_shot = true
 
+[node name="random_explosion" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="body_entered" from="basic_attack_zone" to="." method="_on_basic_attack_zone_body_entered"]
 [connection signal="timeout" from="life_regen" to="." method="_on_life_regen_timeout"]
 [connection signal="timeout" from="combo" to="." method="_on_combo_timeout"]
+[connection signal="timeout" from="random_explosion" to="." method="spawn_random_explosion"]
