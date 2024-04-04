@@ -21,4 +21,7 @@ Le role du joueur est de parcourirs ces **regions** et de debloquer assez de mat
 
 - l'organisation d'une **zone** est générée des que le joueur rentre dans la **région** qui lui est associée
 - Cette organisation est procedurale et ne changera pas tant que le joueur ne relancera pas une partie et se presentera a nouveau dans la **region**
-- 
+
+Voici les briques de bases nécessaires à la génération d'une **zone**:
+
+![bricks](https://github.com/Tohll/Otherworld/blob/develop/Basic%20bricks.png)
