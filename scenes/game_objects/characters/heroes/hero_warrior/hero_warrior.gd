@@ -15,6 +15,7 @@ var is_casting = false
 
 signal player_death
 signal player_ready(max_life: int)
+@onready var gameplay_attribute_map = $GameplayAttributeMap
 
 func _ready():
 	speed = 200
@@ -26,6 +27,7 @@ func _ready():
 	is_player = true
 	damage_range = Vector2(5,9)
 	emit_signal("player_ready", max_life)
+	#print(gameplay_attribute_map.get_attribute_by_name("health").current_value)
 
 func _process(_delta):
 	if !is_dead:

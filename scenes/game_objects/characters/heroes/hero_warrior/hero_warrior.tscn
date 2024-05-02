@@ -1,7 +1,10 @@
-[gd_scene load_steps=80 format=3 uid="uid://dbnw6qu8rj2rm"]
+[gd_scene load_steps=85 format=3 uid="uid://dbnw6qu8rj2rm"]
 
-[ext_resource type="Script" path="res://scenes/game_objects/characters/heroes/hero_warrior/hero_warrior.gd" id="1_3mnnk"]
-[ext_resource type="Texture2D" uid="uid://xm6svq7phsgw" path="res://scenes/game_objects/characters/heroes/hero_warrior/textures/Warrior_spritesheet_allanim.png" id="1_8f7qk"]
+[ext_resource type="Script" path="res://scenes/game_objects/characters/heroes/hero_warrior/hero_warrior.gd" id="1_71hfu"]
+[ext_resource type="Script" path="res://addons/godot_gameplay_systems/attributes_and_abilities/nodes/gameplay_attribute_map.gd" id="3_y5eo6"]
+[ext_resource type="Script" path="res://addons/godot_gameplay_systems/attributes_and_abilities/resources/attribute.gd" id="4_8021l"]
+[ext_resource type="Resource" uid="uid://dedw2tbnquqpx" path="res://scenes/game_objects/characters/heroes/_shared/hero_attributes.tres" id="5_bil2o"]
+[ext_resource type="Texture2D" uid="uid://xm6svq7phsgw" path="res://scenes/game_objects/characters/heroes/hero_warrior/textures/Warrior_spritesheet_allanim.png" id="6_qm47s"]
 
 [sub_resource type="Animation" id="Animation_4teaj"]
 length = 0.5
@@ -1044,12 +1047,26 @@ graph_offset = Vector2(-98, 7)
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhaa6"]
 radius = 37.0
 
+[sub_resource type="Resource" id="Resource_ohkcw"]
+script = ExtResource("4_8021l")
+attribute_name = "health"
+minimum_value = 0.0
+maximum_value = 200.0
+current_value = 200.0
+
+[sub_resource type="Resource" id="Resource_v434m"]
+script = ExtResource("4_8021l")
+attribute_name = "speed"
+minimum_value = 10.0
+maximum_value = 400.0
+current_value = 200.0
+
 [node name="HeroWarrior" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_3mnnk")
+script = ExtResource("1_71hfu")
 
 [node name="player_sheet" type="Sprite2D" parent="."]
-texture = ExtResource("1_8f7qk")
+texture = ExtResource("6_qm47s")
 hframes = 12
 vframes = 15
 frame = 13
@@ -1094,6 +1111,12 @@ one_shot = true
 [node name="random_explosion" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="GameplayAttributeMap" type="Node" parent="."]
+script = ExtResource("3_y5eo6")
+owning_character = NodePath("..")
+attributes = Array[ExtResource("4_8021l")]([SubResource("Resource_ohkcw"), SubResource("Resource_v434m")])
+table = ExtResource("5_bil2o")
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="body_entered" from="basic_attack_zone" to="." method="_on_basic_attack_zone_body_entered"]
