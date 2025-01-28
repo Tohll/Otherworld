@@ -1045,7 +1045,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-98, 7)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhaa6"]
-radius = 37.0
+radius = 0.0
 
 [sub_resource type="Resource" id="Resource_ohkcw"]
 script = ExtResource("4_8021l")
@@ -1081,9 +1081,6 @@ position = Vector2(0, -3.5)
 shape = SubResource("CapsuleShape2D_h24qp")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_cksjh")
-}
 tree_root = SubResource("AnimationNodeStateMachine_2k8fd")
 anim_player = NodePath("../player_animation_player")
 parameters/basic_attack/blend_position = Vector2(0, 0)
